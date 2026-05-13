@@ -38,7 +38,7 @@ public class Vehicle extends Asset{
         AND the makeModel is neither Honda nor Toyota
          */
         if (this.odometer > 100000) {
-            if (!this.makeModel.equalsIgnoreCase("honda") && !this.makeModel.equalsIgnoreCase("toyota")) {
+            if (!this.makeModel.toLowerCase().contains("honda") && !this.makeModel.toLowerCase().contains("toyota")) {
                 carValue -= carValue * 0.25;
             }
         }
