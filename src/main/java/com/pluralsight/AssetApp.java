@@ -24,5 +24,21 @@ public class AssetApp {
         asset.add(ownHome);
         asset.add(dailyVehicle);
         asset.add(funVehicle);
+
+        for (Asset stuff : asset) {
+            System.out.println("Description: " + stuff.getDescription());
+            System.out.println("Date acquired: " + stuff.getDateAcquired());
+            System.out.println("The original cost: " + stuff.getOriginalCost());
+            System.out.println("Current value of asset: " + stuff.getValue());
+
+            if (stuff instanceof House) {
+                House aHouse = (House) stuff;
+                System.out.println("\nThe house is located in " + aHouse.getAddress() + "\n");
+            }
+            if (stuff instanceof Vehicle) {
+                Vehicle aVehicle = (Vehicle) stuff;
+                System.out.println("\nThat vehicle is a " + aVehicle.getMakeModel() + "\n");
+            }
+        }
     }
 }
