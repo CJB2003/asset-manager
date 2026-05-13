@@ -20,7 +20,6 @@ public class Vehicle extends Asset{
     public double getValue() {
         //Created two variables, one for value reduction and the other for car age
         double valueReduction = 0;
-        double carValue = this.originalCost - (this.originalCost * valueReduction);
         int carAge = LocalDate.now().getYear() - this.year;
 
         if (carAge <= 3) {
@@ -32,6 +31,8 @@ public class Vehicle extends Asset{
         } else {
             return 1000;
         }
+
+        double carValue = this.originalCost - (this.originalCost * valueReduction);
 
         /*
         ONLY reduces an additional 25 percent from the depreciated car value if over 100000
